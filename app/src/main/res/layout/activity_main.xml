@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <data>
+
+        <import type="android.widget.BaseAdapter"/>
+        <import type="com.chenzhen.databingtest.model.Person"/>
+
+
+        <variable
+            name="person"
+            type="Person" />
+
+        <variable
+            name="adapter"
+            type="BaseAdapter"/>
+
+    </data>
+
+    <LinearLayout xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/activity_main"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <TextView
+            android:textSize="20sp"
+            android:layout_width="match_parent"
+            android:layout_height="80dp"
+            android:gravity="center"
+            android:text="@{person.name}" />
+        
+        
+        <ListView
+            android:id="@+id/listView"
+            app:adapter = "@{adapter}"
+            android:layout_width="match_parent"
+            android:layout_height="300dp"/>
+
+
+    </LinearLayout>
+
+
+</layout>
